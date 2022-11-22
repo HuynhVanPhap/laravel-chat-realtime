@@ -1,5 +1,5 @@
 # Set master image
-FROM php:7.4-fpm
+FROM php:8.0-fpm
 
 # LABEL maintainer="Mai Trung Duc (maitrungduc1410@gmail.com)"
 

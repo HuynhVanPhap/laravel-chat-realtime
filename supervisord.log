@@ -1,0 +1,20 @@
+2022-11-22 12:06:34,522 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2022-11-22 12:06:34,522 INFO Included extra file "/etc/supervisor.d/php-fpm.conf" during parsing
+2022-11-22 12:06:34,525 INFO supervisord started with pid 8
+2022-11-22 12:06:35,528 INFO spawned: 'php-fpm' with pid 9
+2022-11-22 12:06:36,588 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-11-22 13:57:01,839 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2022-11-22 13:57:01,841 INFO Included extra file "/etc/supervisor.d/php-fpm.conf" during parsing
+2022-11-22 13:57:01,853 INFO supervisord started with pid 9
+2022-11-22 13:57:02,855 INFO spawned: 'php-fpm' with pid 10
+2022-11-22 13:57:04,497 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-11-22 13:57:52,986 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2022-11-22 13:57:52,987 INFO Included extra file "/etc/supervisor.d/php-fpm.conf" during parsing
+2022-11-22 13:57:52,997 INFO supervisord started with pid 9
+2022-11-22 13:57:54,000 INFO spawned: 'php-fpm' with pid 10
+2022-11-22 13:57:55,375 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-11-22 16:17:18,225 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2022-11-22 16:17:18,227 INFO Included extra file "/etc/supervisor.d/php-fpm.conf" during parsing
+2022-11-22 16:17:18,236 INFO supervisord started with pid 9
+2022-11-22 16:17:19,239 INFO spawned: 'php-fpm' with pid 10
+2022-11-22 16:17:20,478 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
