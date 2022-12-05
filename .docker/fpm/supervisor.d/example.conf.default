@@ -1,0 +1,10 @@
+[program:laravel-worker] # Tên program. Đặt tên gì cũng được
+process_name=%(program_name)s_%(process_num)02d
+directory=/path/to/your/project # Đường dẫn tới project cần run
+command=sendmail.sh # Lệnh muốn run
+autostart=true # Quy định tiến trình có tự chạy ngay khi Supervisor được khởi động hay ko. Thường thì Supervisor được chạy khi boot, nên việc quy định tiến trình có tự chạy hay không sẽ phụ thuộc vào boot.
+autorestart=true # Quy định tiến trình có tự khởi động ngay sau khi nó bị tắt vì lý do nào đó (đã chạy xong, bị lỗi, bị timeout…) hay ko.
+user=forge # User dùng để thực thi tiến trình.
+numprocs=4 # Số lượng tiến trình mà Supervisor sẽ chạy. Ví dụ để gửi mail, ta để numprocs=4, nghĩa là 4 tiến trình cùng chạy task gửi mail.
+redirect_stderr=true # Nếu là true thì stderr sẽ bị redirect để xuất vào file chỉ định ở stdout_logfile
+stdout_logfile=/path/to/your/project/logs/worker.log # Đường dẫn tới file log

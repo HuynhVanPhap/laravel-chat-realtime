@@ -30,6 +30,7 @@ RUN apt-get install -y libzip-dev zip
 RUN docker-php-ext-install zip
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install -j$(nproc) gd
+
 # Add and Enable PHP-PDO Extenstions for PHP connect Mysql
 RUN docker-php-ext-install pdo pdo_mysql
 RUN docker-php-ext-enable pdo_mysql
@@ -65,10 +66,16 @@ RUN usermod -u 1000 www-data
 COPY . .
 
 # Chang app directory permission
-RUN chown -R www-data:www-data .
+RUN chown -R :root .
 
-ENV ENABLE_CRONTAB 1
-ENV ENABLE_HORIZON 1
+# Set Optional Package for Laravel's Application
+ENV ENABLE_CRONTAB 0
+ENV ENABLE_HORIZON 0
+ENV ENABLE_WORKER 0
+
+# Set Timezone To Saigon
+RUN rm -rf /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Asia/Saigon /etc/localtime
 
 ENTRYPOINT ["sh", "/var/www/html/.docker/fpm/docker-entrypoint.sh"]
 
