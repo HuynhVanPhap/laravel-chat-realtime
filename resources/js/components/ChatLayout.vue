@@ -37,8 +37,20 @@
                 list_messages: []
             }
         },
-        created () {
+        mounted () {
             // this.loadMessage();
+
+            // channel.listen('message', (data) => {
+            //     let message = data.message
+            //     // message.user = data.user
+            //     this.list_messages.push(message)
+            // });
+            Echo.channel('message-room')
+                .listen('.message', (data) => {
+                    // let message = data.message
+            //     // message.user = data.user
+                    this.list_messages.push({user: data.user, message: data.message})
+                });
         },
         methods: {
             // async loadMessage() {
@@ -55,7 +67,7 @@
                         message: this.message
                     })
                     // this.list_messages.push(response.data.message)
-                    this.list_messages.push(response.data)
+                    // this.list_messages.push(response.data)
                     this.message = ''
                 } catch (error) {
                     console.log(error)

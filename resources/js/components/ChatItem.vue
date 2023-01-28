@@ -4,16 +4,14 @@
     >
     <!-- :class="{'is-current-user': $root.currentUserLogin.id === message.user.id}" -->
 		<div class="message-item user-name">
-			<!-- {{ message.user.name}} -->
-            User
+			{{ message.user}}
 		</div>
 		<div class="message-item timestamp">
 			<!-- | {{ message.created_at.split(' ')[1] }}: -->
             | Today :
 		</div>
 		<div class="message-item text-message">
-			<!-- {{ message.message }} -->
-            {{ message }}
+			{{ message.message }}
 		</div>
 	</div>
 </template>
@@ -21,14 +19,14 @@
 <script>
 	export default {
         props: {
-            // message: {
-            //     type: Object,
-            //     default: {}
-            // }
-            message : {
-                type: String,
+            message: {
+                type: Object,
                 default: {}
             }
+            // message : {
+            //     type: String,
+            //     default: {}
+            // }
         }
 	}
 </script>

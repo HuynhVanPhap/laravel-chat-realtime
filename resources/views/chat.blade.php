@@ -24,6 +24,7 @@
 		}
 	</style>
 	{{-- <link rel="stylesheet" href="{{ asset('build/assets/app.67dcdfd2.css') }}"> --}}
+
     @vite('resources/js/app.js')
 </head>
 <body>

@@ -1,10 +1,11 @@
 <?php
 
 use App\Events\MessageSent;
+use App\Events\TestEvent;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\RedisController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +19,11 @@ use Illuminate\Http\Request;
 Auth::routes();
 
 Route::get('/', function () {
+    broadcast(new TestEvent());
     return view('welcome');
 });
+
+Route::get('/data', [RedisController::class, 'getEvents']);
 
 Route::get('/chat', function() {
     return view('chat');
@@ -27,6 +31,7 @@ Route::get('/chat', function() {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::post('/send-message', function (Request $request) {
-    broadcast(new MessageSent($request->message));
+    $name = Auth::user()->name;
+    broadcast(new MessageSent($name, $request->message));
     return $request->message;
 });

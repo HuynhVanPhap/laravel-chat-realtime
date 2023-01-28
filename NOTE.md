@@ -1,1 +1,3 @@
 - Laravel Telescope : Công cụ Test cho Laravel
+- Thay địa chỉ VITE_API_LARAVEL_ECHO_SERVER_URL và VITE_API_IP_HOST trước khi chạy project
+- Câu hình lại lại địa chỉ authHost trong laravel-echo-server.json trước khi chạy project

@@ -56,6 +56,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - "../env:/app/.env"
+      - "./echo/laravel-echo-server.json:/app/laravel-echo-server.json"
     restart: unless-stopped
 
   redis:
